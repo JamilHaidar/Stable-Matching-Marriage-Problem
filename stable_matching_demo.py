@@ -1,7 +1,7 @@
 import random
 
 # n is the number of men/women/couples
-min_n = 3
+min_n = 4
 max_n = 10
 
 # monte_carlo is the number of simulations for each number of couples
@@ -14,6 +14,7 @@ plot_3d = True
 
 # Visualizing how the algorithm is doing the selection from the preference tables
 visualize_iterations = True
+
 
 # Print how iterations are distributed for each number of couples (monte carlo)
 print_statistics = True
@@ -123,8 +124,8 @@ if plot_statistics:
         for n in simulations:
             x,y = zip(*sorted(zip(list(simulations[n].keys()),list(simulations[n].values()))))
             plt.plot(list(x),list(y), label=str(n))
-        plt.xlabel('Number of couples')
-        plt.ylabel('Number of iterations')
+        plt.xlabel('Number of iterations')
+        plt.ylabel('Iteration Distribution')
         plt.legend()
         plt.show()
 
