@@ -10,20 +10,21 @@ Quoting directly from [wikipedia](https://en.wikipedia.org/wiki/Stable_marriage_
 The algorithm suggested is the [Gale-Shapley algorithm](https://en.wikipedia.org/wiki/Gale%E2%80%93Shapley_algorithm).
 The algorithm works as shown below:
   
-  Input: Preferences Lists of n Men and n Women
-  
-  Initialize each person to be free.
-  while (some man is free and hasn't proposed to every woman) {
-    Choose such a man m
-    w = 1st woman on m's list to whom m has not yet proposed
-    if (w is free)
-      m and w become engaged
-    else if (w prefers m to her fiancé m')
-      m and w become engaged
-      m’ becomes free
-    else
-      w rejects m /* m remains free*/
-  }
+    Input: Preferences Lists of n Men and n Women
+
+    Initialize each person to be free.
+    while (some man is free and hasn't proposed to every woman) {
+      Choose such a man m
+      w = 1st woman on m's list to whom m has not yet proposed
+      if (w is free)
+        m and w become engaged
+      else if (w prefers m to her fiancé m')
+        m and w become engaged
+        m’ becomes free
+      else
+        w rejects m /* m remains free*/
+    }
+
 ---
 
 # Implementation
@@ -35,19 +36,29 @@ There are variables that can be changed for observing the different outcomes of 
 `monte_carlo`: number of simulations/instances per run. Set this to 1 to see only one possible initial condition being run.
 
 `plot_statistics`: Determines whether plot_2d and plot_3d function. DEPENDENCIES REQUIRED: `matplotlib` and `numpy`.
+
 `plot_2d`: Plots `Number of iterations` vs `Iteration Distribution` for each population size.
-![plot2d](./images/plot2d.PNG)
+
+![plot2d](./images/plot2d.png)
 
 `plot_3d`: Plots `Number of iterations` vs `Iteration Distribution` for each population size (better for large range of population size).
-![plot3d](./images/plot3d.PNG)
+
+![plot3d](./images/plot3d.png)
 
 `visualize_iterations`: Visualizes matched men and women as well as their preferences in a table-like format in the console/terminal. Allows the user to go through each iteration step by step and see how the algorithm is working.
+
 ![iterations1](./images/iterations1.PNG)
 ![iterations2](./images/iterations2.PNG)
 
 `print_statistics`: Prints the mean and standard deviation of the number of iterations until termination for all simulated scenarios for each population size.
+
 ![statistics](./images/statistics.PNG)
 
 ---
 Finally, I played around with looking at timing and visualizing iteration distributions. Here are some figures I simulated for large population sizes:
-![iteration distribution](./images/iteration%20distribution.PNG)
+
+![iteration distribution](./images/iteration%20distribution.png)
+
+![time_distribution](./images/time%20distribution.png)
+
+![time_gauss](./images/time_gaus.png)
